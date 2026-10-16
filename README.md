@@ -1,5 +1,5 @@
 # Trabajo Práctico - Programación Orientada a Objetos
-## Etapa 1 
+## Etapa 1
 
 ### Integrantes:
 - Aranguren Alejo - 1215686
@@ -12,3 +12,9 @@ En este proyecto nos enfocamos en el desarrollo de la propuesta C, la cual desta
 Para esto identificamos cuatro actores: usuario, operador del sistema, técnico de mantenimiento y administrador. 
 
 El sistema abarca el registro de usuarios y gestión de su saldo (o medios de pago), el retiro y devolución de vehículos en las estaciones controlando su capacidad, y el cálculo de la tarifa según el tiempo de uso, tipo de vehículo y promociones vigentes. Además, contempla el control de estado de las unidades, el reporte de fallas para generar órdenes de reparación con los técnicos, la redistribución de vehículos entre estaciones cuando están vacías o llenas, y la emisión de reportes de uso y viajes para el administrador.
+
+### Estructura del proyecto:
+- `/docs`: Documentación general (enunciado elegido, requisitos y supuestos, informe de diseño y plan de pruebas).
+- `/docs/uml`: Diagramas UML (archivos fuente y exportaciones de imágenes).
+- `/src`: Código fuente de la aplicación en Java.
+- `/test`: Casos de pruebas unitarias.
