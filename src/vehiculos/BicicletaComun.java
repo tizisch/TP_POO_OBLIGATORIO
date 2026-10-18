@@ -1,3 +1,5 @@
+package vehiculos;
+
 import java.time.LocalDate;
 
 public class BicicletaComun extends Vehiculo {

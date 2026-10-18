@@ -1,3 +1,8 @@
+package vehiculos;
+
+import mantenimiento.OrdenMantenimiento;
+import mantenimiento.ReporteFalla;
+
 import java.time.LocalDate;
 import java.util.List;
 

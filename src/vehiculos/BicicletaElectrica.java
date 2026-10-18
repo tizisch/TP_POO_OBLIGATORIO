@@ -1,13 +1,14 @@
+package vehiculos;
+
 import java.time.LocalDate;
 
-public class MonopatinElectrico extends Vehiculo {
+public class BicicletaElectrica extends Vehiculo {
     private int nivelBateria;
     private double autonomia;
-    private double velocidadMaxima;
 
-    public MonopatinElectrico(String codigo, LocalDate fechaAlta, double velMax) {
+    public BicicletaElectrica(String codigo, LocalDate fechaAlta, double autonomia) {
         super(codigo, fechaAlta);
-        this.velocidadMaxima = velMax;
+        this.autonomia = autonomia;
     }
 
     @Override
