@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="se agrega .gitignore y deja de versionar .idea" />
+    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="Diagramas de clases final y inicial, y modificacion del README">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/uml/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/uml/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alejo" />
+        <entry key="$PROJECT_DIR$" value="Gonzalo-Raggio" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -155,6 +158,11 @@
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gragg\Downloads\TP_POO_OBLIGATORIO\docs\uml" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -197,7 +205,8 @@
     <MESSAGE value="Actualización de estructura de proyecto" />
     <MESSAGE value="corrección gramatical" />
     <MESSAGE value="se agrega .gitignore y deja de versionar .idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega .gitignore y deja de versionar .idea" />
+    <MESSAGE value="Diagramas de clases final y inicial, y modificacion del README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diagramas de clases final y inicial, y modificacion del README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
