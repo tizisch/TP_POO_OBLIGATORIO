@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="Cambio del diagrama de secuencia al correcto">
+    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="Diagramas de clases final y inicial, y modificacion del README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/uml/secuencia_agregar_saldo.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Gonzalo-Raggio" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,7 +46,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/tizisch/TP_POO_OBLIGATORIO.git&quot;,
-    &quot;accountId&quot;: &quot;78940842-757e-4470-bb43-e9ccd364fdbd&quot;
+    &quot;accountId&quot;: &quot;0a48d52f-5e24-4988-9073-a28c8e59f494&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -139,7 +138,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Gonzalo-Raggio&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;git.auto.fetch.suggestion.counter&quot;: &quot;3&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -189,19 +188,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Gonzalo-Raggio" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -218,8 +205,7 @@
     <MESSAGE value="corrección gramatical" />
     <MESSAGE value="se agrega .gitignore y deja de versionar .idea" />
     <MESSAGE value="Diagramas de clases final y inicial, y modificacion del README" />
-    <MESSAGE value="Cambio del diagrama de secuencia al correcto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio del diagrama de secuencia al correcto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diagramas de clases final y inicial, y modificacion del README" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
