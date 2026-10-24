@@ -1,0 +1,131 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"1dc06be8-a796-4836-a81c-051e47f065e6\" name=\"Changes\" comment=\"Diagramas de clases final y inicial, y modificacion del README\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/docs/uml/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/docs/uml/README.md\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Gonzalo-Raggio\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {}\r\n}</component>\r\n  <component name=\"GitHubPullRequestState\">{\r\n  &quot;prStates&quot;: [\r\n    {\r\n      &quot;id&quot;: {\r\n        &quot;id&quot;: &quot;PR_kwDOVJsqEc8AAAABJHLe2g&quot;,\r\n        &quot;number&quot;: 1\r\n      },\r\n      &quot;lastSeen&quot;: 1792299478034\r\n    }\r\n  ]\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/tizisch/TP_POO_OBLIGATORIO.git&quot;,\r\n    &quot;accountId&quot;: &quot;0a48d52f-5e24-4988-9073-a28c8e59f494&quot;\r\n  },\r\n  &quot;recentNewPullRequestHead&quot;: {\r\n    &quot;server&quot;: {\r\n      &quot;useHttp&quot;: false,\r\n      &quot;host&quot;: &quot;github.com&quot;,\r\n      &quot;port&quot;: null,\r\n      &quot;suffix&quot;: null\r\n    },\r\n    &quot;owner&quot;: &quot;tizisch&quot;,\r\n    &quot;repository&quot;: &quot;TP_POO_OBLIGATORIO&quot;\r\n  }\r\n}</component>\r\n  <component name=\"NextEditCompletionFeaturesState\">\r\n    <decayedCancelled>\r\n      <entry key=\"MS100\" value=\"1.0567200043839196\" />\r\n      <entry key=\"MS500\" value=\"1.5989895607451912\" />\r\n      <entry key=\"S2\" value=\"2.562150735750394\" />\r\n      <entry key=\"S5\" value=\"4.58535258648119\" />\r\n      <entry key=\"S10\" value=\"6.9733124076570245\" />\r\n      <entry key=\"S30\" value=\"12.204228539252414\" />\r\n      <entry key=\"S60\" value=\"16.57585200986686\" />\r\n      <entry key=\"M2\" value=\"20.701042511813082\" />\r\n      <entry key=\"M5\" value=\"29.600558669645487\" />\r\n      <entry key=\"M10\" value=\"42.363441596138834\" />\r\n      <entry key=\"M15\" value=\"50.96451156755275\" />\r\n      <entry key=\"M30\" value=\"64.87872228209702\" />\r\n      <entry key=\"H1\" value=\"76.34907906967945\" />\r\n      <entry key=\"H2\" value=\"84.61846983716845\" />\r\n      <entry key=\"H4\" value=\"89.81485378255499\" />\r\n      <entry key=\"D1\" value=\"94.88874136854243\" />\r\n      <entry key=\"W1\" value=\"95.83910295293505\" />\r\n    </decayedCancelled>\r\n    <decayedSelected>\r\n      <entry key=\"MS100\" value=\"0.0\" />\r\n      <entry key=\"MS500\" value=\"0.0\" />\r\n      <entry key=\"S2\" value=\"5.0137314719889654E-92\" />\r\n      <entry key=\"S5\" value=\"3.020399766565082E-37\" />\r\n      <entry key=\"S10\" value=\"5.495816378451049E-19\" />\r\n      <entry key=\"S30\" value=\"8.191134766854161E-7\" />\r\n      <entry key=\"S60\" value=\"9.050488808265631E-4\" />\r\n      <entry key=\"M2\" value=\"0.030084030328839984\" />\r\n      <entry key=\"M5\" value=\"0.24622628189362677\" />\r\n      <entry key=\"M10\" value=\"0.4962119324377712\" />\r\n      <entry key=\"M15\" value=\"0.6267747163901438\" />\r\n      <entry key=\"M30\" value=\"0.791691048572702\" />\r\n      <entry key=\"H1\" value=\"0.8897702223454672\" />\r\n      <entry key=\"H2\" value=\"0.94327632343098\" />\r\n      <entry key=\"H4\" value=\"0.9712241365570465\" />\r\n      <entry key=\"D1\" value=\"0.9951454869749816\" />\r\n      <entry key=\"W1\" value=\"0.9993050509537297\" />\r\n    </decayedSelected>\r\n    <decayedShown>\r\n      <entry key=\"MS100\" value=\"0.9780625520000288\" />\r\n      <entry key=\"MS500\" value=\"1.5722946038523098\" />\r\n      <entry key=\"S2\" value=\"2.54940763083081\" />\r\n      <entry key=\"S5\" value=\"4.567389230526785\" />\r\n      <entry key=\"S10\" value=\"6.953225691477212\" />\r\n      <entry key=\"S30\" value=\"12.187682584485211\" />\r\n      <entry key=\"S60\" value=\"16.564671060127882\" />\r\n      <entry key=\"M2\" value=\"20.723385072546087\" />\r\n      <entry key=\"M5\" value=\"29.842457035298928\" />\r\n      <entry key=\"M10\" value=\"42.85659864252708\" />\r\n      <entry key=\"M15\" value=\"51.58881040906549\" />\r\n      <entry key=\"M30\" value=\"65.66877470355472\" />\r\n      <entry key=\"H1\" value=\"77.23784077989954\" />\r\n      <entry key=\"H2\" value=\"85.56116872739565\" />\r\n      <entry key=\"H4\" value=\"90.78576558412817\" />\r\n      <entry key=\"D1\" value=\"95.88383091138277\" />\r\n      <entry key=\"W1\" value=\"96.83839990736868\" />\r\n    </decayedShown>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3KqxENeT91WT1vdJMSbEeaFkRsG\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"RunOnceActivity.typescript.service.memoryLimit.init\": \"true\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"git.auto.fetch.suggestion.counter\": \"3\",\r\n    \"junie.onboarding.icon.badge.shown\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.jshint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.jshint\": \"\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"onboarding.tips.debug.path\": \"C:/Users/Alejo/IdeaProjects/TP_POO_OBLIGATORIO/src/Main.java\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\",\r\n    \"to.speed.mode.migration.done\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\gragg\\Downloads\\TP_POO_OBLIGATORIO\\docs\\uml\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"1dc06be8-a796-4836-a81c-051e47f065e6\" name=\"Changes\" comment=\"\" />\r\n      <created>1792298790232</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1792298790232</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Creación de controladores\" />\r\n    <MESSAGE value=\"Clases de paquete vehiculos\" />\r\n    <MESSAGE value=\"Clases de paquete viajes\" />\r\n    <MESSAGE value=\"Clases de paquete mantenimiento\" />\r\n    <MESSAGE value=\"Clases de paquete usuarios\" />\r\n    <MESSAGE value=\"Clase de paquete administracion\" />\r\n    <MESSAGE value=\"Actualización de estructura de proyecto\" />\r\n    <MESSAGE value=\"corrección gramatical\" />\r\n    <MESSAGE value=\"se agrega .gitignore y deja de versionar .idea\" />\r\n    <MESSAGE value=\"Diagramas de clases final y inicial, y modificacion del README\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Diagramas de clases final y inicial, y modificacion del README\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4a69a14945f82fe270fc78ea4293374816674f67)
++++ b/.idea/workspace.xml	(date 1792546213361)
+@@ -4,9 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="Diagramas de clases final y inicial, y modificacion del README">
++    <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="cambio readme">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/docs/uml/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/uml/README.md" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,22 +43,22 @@
+     }
+   ]
+ }</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/tizisch/TP_POO_OBLIGATORIO.git&quot;,
+-    &quot;accountId&quot;: &quot;0a48d52f-5e24-4988-9073-a28c8e59f494&quot;
+-  },
+-  &quot;recentNewPullRequestHead&quot;: {
+-    &quot;server&quot;: {
+-      &quot;useHttp&quot;: false,
+-      &quot;host&quot;: &quot;github.com&quot;,
+-      &quot;port&quot;: null,
+-      &quot;suffix&quot;: null
+-    },
+-    &quot;owner&quot;: &quot;tizisch&quot;,
+-    &quot;repository&quot;: &quot;TP_POO_OBLIGATORIO&quot;
+-  }
+-}</component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/tizisch/TP_POO_OBLIGATORIO.git",
++    "accountId": "78940842-757e-4470-bb43-e9ccd364fdbd"
++  },
++  "recentNewPullRequestHead": {
++    "server": {
++      "useHttp": false,
++      "host": "github.com",
++      "port": null,
++      "suffix": null
++    },
++    "owner": "tizisch",
++    "repository": "TP_POO_OBLIGATORIO"
++  }
++}]]></component>
+   <component name="NextEditCompletionFeaturesState">
+     <decayedCancelled>
+       <entry key="MS100" value="1.0567200043839196" />
+@@ -131,33 +130,33 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+-    "codeWithMe.voiceChat.enabledByDefault": "false",
+-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+-    "git-widget-placeholder": "main",
+-    "git.auto.fetch.suggestion.counter": "3",
+-    "junie.onboarding.icon.badge.shown": "true",
+-    "kotlin-language-version-configured": "true",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.jshint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.jshint": "",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "onboarding.tips.debug.path": "C:/Users/Alejo/IdeaProjects/TP_POO_OBLIGATORIO/src/Main.java",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.pluginManager",
+-    "to.speed.mode.migration.done": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
++    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
++    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;3&quot;,
++    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Alejo/IdeaProjects/TP_POO_OBLIGATORIO/src/Main.java&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
++    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\gragg\Downloads\TP_POO_OBLIGATORIO\docs\uml" />
+@@ -206,7 +205,9 @@
+     <MESSAGE value="corrección gramatical" />
+     <MESSAGE value="se agrega .gitignore y deja de versionar .idea" />
+     <MESSAGE value="Diagramas de clases final y inicial, y modificacion del README" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Diagramas de clases final y inicial, y modificacion del README" />
++    <MESSAGE value="cambio readme (agregamos ``)" />
++    <MESSAGE value="cambio readme" />
++    <option name="LAST_COMMIT_MESSAGE" value="cambio readme" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
