@@ -4,6 +4,7 @@ import mantenimiento.OrdenMantenimiento;
 import mantenimiento.ReporteFalla;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Vehiculo {
@@ -16,9 +17,13 @@ public abstract class Vehiculo {
     public Vehiculo(String codigo, LocalDate fechaAlta) {
         this.codigo = codigo;
         this.fechaAlta = fechaAlta;
+        this.kmRecorridos = 0.0;
+        this.estado = Estado.DISPONIBLE;
+        this.ordenesMantenimiento = new ArrayList<>();
     }
 
     public boolean estaDisponible() {
+        return true;
     }
 
     public abstract double calcularCosto(int minutos);
