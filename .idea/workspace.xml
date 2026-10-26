@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1dc06be8-a796-4836-a81c-051e47f065e6" name="Changes" comment="Diagramas de clases final y inicial, y modificacion del README">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/uml/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/uml/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP_POO_OBLIGATORIO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TP_POO_OBLIGATORIO.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +140,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "alejo",
     "git.auto.fetch.suggestion.counter": "3",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
