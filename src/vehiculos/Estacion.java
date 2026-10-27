@@ -7,16 +7,16 @@ public class Estacion {
 
     private String codigo;
     private String direccion;
-    private String coordenadas;         //coordenadas??? chquear esto, no aparece como atributo en el diagrama fibal de clases
+    private String coordenadas;
     private int capacidadMaxima;
     private List<Vehiculo> vehiculosEstacionados;
 
-    public Estacion(String codigo, String direccion, String coordenadas, int capacidadMaxima, List<Vehiculo> vehiculosEstacionados) {
-        this.codigo = codigo; //tambien se habla de un capacidad en el diagrama, pero no aparece como atributo
+    public Estacion(String codigo, String direccion, String coordenadas, int capacidadMaxima) {
+        this.codigo = codigo;
         this.direccion = direccion;
         this.coordenadas = coordenadas;
         this.capacidadMaxima = capacidadMaxima;
-        this.vehiculosEstacionados = vehiculosEstacionados;
+        this.vehiculosEstacionados = new ArrayList<>();
     }
 
     public String getCodigo() {
