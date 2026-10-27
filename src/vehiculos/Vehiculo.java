@@ -23,12 +23,21 @@ public abstract class Vehiculo {
     }
 
     public boolean estaDisponible() {
-        return true;
+        return this.estado == Estado.DISPONIBLE;
     }
 
     public abstract double calcularCosto(int minutos);
 
+    public String getCodigo() {
+        return this.codigo;
+    }
+
+    public Estado getEstado() {
+        return this.estado;
+    }
+
     public void cambiarEstado(Estado nuevoEstado) {
+        this.estado = nuevoEstado;
     }
 
     public void agregarReporte(ReporteFalla reporte) {

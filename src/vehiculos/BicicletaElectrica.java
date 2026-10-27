@@ -13,10 +13,23 @@ public class BicicletaElectrica extends Vehiculo {
     }
 
     //@Override
-    //public boolean estaDisponible() {}
+    @Override
+    public boolean estaDisponible() {
+        return super.estaDisponible() && this.nivelBateria >= 15;
+    }
 
   @Override
    public double calcularCosto(int minutos) {
-        return 3;
+        if (minutos <= 2) {
+            return 0;
+        }
+        if (minutos > 1440) {
+            return 100000;
+        }
+        if (minutos <= 120) {
+            return 300 + (45 * minutos);
+        }
+        int minutosExcedentes = minutos - 120;
+        return 300 + (45 * 120) + (45 * 1.5 * minutosExcedentes);
   }
 }
