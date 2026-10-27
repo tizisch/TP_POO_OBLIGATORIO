@@ -18,6 +18,10 @@ public class Viaje {
     private Estacion estacionDestino;
     private List<PuntoRecorrido> puntosRecorrido;
 
+    public LocalDateTime getFechaHoraFin() {
+        return fechaHoraFin;
+    }
+
     public Viaje(Usuario usuario, Vehiculo vehiculo, Estacion estacionOrigen) {
         this.usuario = usuario;
         this.vehiculo = vehiculo;
