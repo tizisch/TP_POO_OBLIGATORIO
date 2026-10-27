@@ -32,4 +32,12 @@ public class BicicletaElectrica extends Vehiculo {
         int minutosExcedentes = minutos - 120;
         return 300 + (45 * 120) + (45 * 1.5 * minutosExcedentes);
   }
+
+    public int getbateria(){
+        return this.nivelBateria;
+    }
+
+    public void setbateria(int bateria){
+        this.nivelBateria=bateria;
+    }
 }
