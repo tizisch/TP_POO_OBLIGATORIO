@@ -13,6 +13,16 @@ public class BicicletaComun extends Vehiculo {
 
     @Override
     public double calcularCosto(int minutos) {
-    return 2;
+        if (minutos <= 2) {
+            return 0;
+        }
+        if (minutos > 1440) {
+            return 50000;
+        }
+        if (minutos <= 120) {
+            return 200 + (20 * minutos);
+        }
+        int minutosExcedentes = minutos - 120;
+        return 200 + (20 * 120) + (20 * 1.5 * minutosExcedentes);
     }
 }

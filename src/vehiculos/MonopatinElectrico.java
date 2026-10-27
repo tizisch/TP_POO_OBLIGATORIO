@@ -15,11 +15,21 @@ public class MonopatinElectrico extends Vehiculo {
 
     @Override
     public boolean estaDisponible() {
-        return true;
+        return super.estaDisponible() && this.nivelBateria >= 15;
     }
 
     @Override
     public double calcularCosto(int minutos) {
-        return 3;
+        if (minutos <= 2) {
+            return 0;
+        }
+        if (minutos > 1440) {
+            return 150000;
+        }
+        if (minutos <= 120) {
+            return 300 + (50 * minutos);
+        }
+        int minutosExcedentes = minutos - 120;
+        return 300 + (50 * 120) + (50 * 1.5 * minutosExcedentes);
     }
 }
