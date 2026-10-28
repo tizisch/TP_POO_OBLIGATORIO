@@ -25,6 +25,7 @@ public class Viaje {
     public LocalDateTime getFechaHoraInicio(){ return fechaHoraInicio; }
     public Usuario getUsuario(){return usuario;}
     public Vehiculo getVehiculo(){return vehiculo;}
+
     public Viaje(Usuario usuario, Vehiculo vehiculo, Estacion estacionOrigen) {
         this.usuario = usuario;
         this.vehiculo = vehiculo;
@@ -78,8 +79,17 @@ public class Viaje {
         }
 
     public double calcularCosto(Promocion promo) {
-        return 0;
+        int minutos = (int) Duration.between(this.fechaHoraInicio, this.fechaHoraFin).toMinutes();
+        double costo = this.vehiculo.calcularCosto(minutos);
+
+        if (promo != null) {
+            costo = costo - promo.calcularDescuento(this, costo);
+        }
+
+        return costo;
     }
+
+
 
     }
 
