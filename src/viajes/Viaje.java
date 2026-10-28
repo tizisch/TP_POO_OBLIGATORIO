@@ -22,7 +22,9 @@ public class Viaje {
     public LocalDateTime getFechaHoraFin() {
         return fechaHoraFin;
     }
-
+    public LocalDateTime getFechaHoraInicio(){ return fechaHoraInicio; }
+    public Usuario getUsuario(){return usuario;}
+    public Vehiculo getVehiculo(){return vehiculo;}
     public Viaje(Usuario usuario, Vehiculo vehiculo, Estacion estacionOrigen) {
         this.usuario = usuario;
         this.vehiculo = vehiculo;
