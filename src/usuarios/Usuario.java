@@ -24,7 +24,7 @@ public class Usuario {
     public List<Viaje> getViajes() {
         return viajes;
     }
-
+    public boolean getTienePlanMensual(){return tienePlanMensual;}
     public String getDocumento() {
         return documento;
     }
@@ -64,7 +64,7 @@ public class Usuario {
                 Viaje viaje = new Viaje(this, vehiculo, estacionOrigen );
                 viajes.add(viaje);
                 vehiculo.cambiarEstado(Estado.EN_USO);
-                //  estacionOrigen.quitarVehiculo(vehiculo);       // falta implementación de Estacion
+                estacionOrigen.quitarVehiculo(vehiculo);
                 return viaje;
             } else
                 throw new VehiculoNoDisponibleException("El vehículo seleccionado no se encuentra disponible.");
