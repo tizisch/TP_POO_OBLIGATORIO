@@ -1,4 +1,6 @@
 package controladores;
+
+import excepciones.EstacionNoEncontradaException;
 import excepciones.RetiroNoPermitidoException;
 import excepciones.UsuarioNoEncontradoException;
 import excepciones.VehiculoNoDisponibleException;
@@ -15,7 +17,7 @@ public class ControladorViajes {
         this.repositorio = repositorio;
     }
 
-    public Viaje retirarVehiculo(String documento, String codigoVehiculo, String codigoEstacion) throws UsuarioNoEncontradoException, VehiculoNoDisponibleException, RetiroNoPermitidoException {
+    public Viaje retirarVehiculo(String documento, String codigoVehiculo, String codigoEstacion) throws UsuarioNoEncontradoException, VehiculoNoDisponibleException, RetiroNoPermitidoException, EstacionNoEncontradaException {
         Usuario usuario = repositorio.buscarUsuario(documento);
         if (usuario == null) {
             throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
@@ -23,7 +25,7 @@ public class ControladorViajes {
 
         Estacion estacion = repositorio.buscarEstacion(codigoEstacion);
         if (estacion == null) {
-            throw new IllegalArgumentException("No existe la estacion " + codigoEstacion);
+            throw new EstacionNoEncontradaException("No existe la estacion " + codigoEstacion);
         }
 
         Vehiculo vehiculo = estacion.buscarVehiculo(codigoVehiculo);
@@ -35,7 +37,7 @@ public class ControladorViajes {
         return viaje;
     }
 
-    public double devolverVehiculo(String documento, String codigoEstacion) throws UsuarioNoEncontradoException {
+    public double devolverVehiculo(String documento, String codigoEstacion) throws UsuarioNoEncontradoException, EstacionNoEncontradaException {
         Usuario usuario = repositorio.buscarUsuario(documento);
         if (usuario == null) {
             throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
@@ -43,7 +45,7 @@ public class ControladorViajes {
 
         Estacion estacion = repositorio.buscarEstacion(codigoEstacion);
         if (estacion == null) {
-            throw new IllegalArgumentException("No existe la estacion " + codigoEstacion);
+            throw new EstacionNoEncontradaException("No existe la estacion " + codigoEstacion);
         }
 
         for (Viaje viaje : usuario.getViajes()) {
@@ -56,4 +58,3 @@ public class ControladorViajes {
         return 0;
     }
 }
-
