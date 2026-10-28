@@ -34,4 +34,26 @@ public class ControladorViajes {
         estacion.quitarVehiculo(vehiculo);
         return viaje;
     }
+
+    public double devolverVehiculo(String documento, String codigoEstacion) throws UsuarioNoEncontradoException {
+        Usuario usuario = repositorio.buscarUsuario(documento);
+        if (usuario == null) {
+            throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
+        }
+
+        Estacion estacion = repositorio.buscarEstacion(codigoEstacion);
+        if (estacion == null) {
+            throw new IllegalArgumentException("No existe la estacion " + codigoEstacion);
+        }
+
+        for (Viaje viaje : usuario.getViajes()) {
+            if (viaje.getFechaHoraFin() == null) {
+                viaje.finalizar(estacion);
+                estacion.agregarVehiculo(viaje.getVehiculo());
+                return viaje.calcularCosto(null);
+            }
+        }
+        return 0;
+    }
 }
+
