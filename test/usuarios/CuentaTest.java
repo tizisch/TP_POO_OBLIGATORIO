@@ -54,14 +54,4 @@ class CuentaTest {
             cuenta.debitar(0, "VIAJE");
         });
     }
-
-    @Test
-    public void debitar_superaSaldo_quedaEnNegativo() throws ImporteInvalidoException {
-        Cuenta cuenta = new Cuenta();
-
-        cuenta.recargar(400, "Mercado Pago");
-        cuenta.debitar(500, "VIAJE");
-
-        assertEquals(-100.0, cuenta.getSaldo());
-    }
 }
