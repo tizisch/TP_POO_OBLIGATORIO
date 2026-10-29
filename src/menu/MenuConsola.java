@@ -3,18 +3,23 @@ package menu;
 import repositorio.Repositorio;
 import java.util.Scanner;
 import controladores.ControladorCuenta;
+import controladores.ControladorEstacion;
 import usuarios.Usuario;
 import excepciones.ImporteInvalidoException;
 import excepciones.UsuarioNoEncontradoException;
+import vehiculos.Estacion;
 
 public class MenuConsola {
     private Repositorio repositorio;
     private Scanner sc;
     private ControladorCuenta controladorCuenta;
+    private ControladorEstacion controladorEstacion;
+
 
     public MenuConsola() {
         this.repositorio = new Repositorio();
         this.controladorCuenta = new ControladorCuenta(repositorio);
+        this.controladorEstacion = new ControladorEstacion(repositorio);
         this.sc = new Scanner(System.in);
     }
 
@@ -104,6 +109,23 @@ public class MenuConsola {
         } catch (ImporteInvalidoException | UsuarioNoEncontradoException e) {
             System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    private void agregarEstacion() {
+        System.out.print("Codigo: ");
+        String codigo = sc.nextLine().trim();
+        System.out.print("Direccion: ");
+        String direccion = sc.nextLine().trim();
+        System.out.print("Coordenadas: ");
+        String coordenadas = sc.nextLine().trim();
+        int capacidadMaxima = leerEntero("Capacidad maxima: ");
+
+        try {
+            Estacion estacion = controladorEstacion.registrarEstacion(
+                    codigo, direccion, coordenadas, capacidadMaxima);
+            System.out.println("Estacion registrada: " + estacion);
+        } catch (IllegalArgumentException | IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
