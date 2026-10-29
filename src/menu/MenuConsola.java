@@ -4,6 +4,8 @@ import repositorio.Repositorio;
 import java.util.Scanner;
 import controladores.ControladorCuenta;
 import usuarios.Usuario;
+import excepciones.ImporteInvalidoException;
+import excepciones.UsuarioNoEncontradoException;
 
 public class MenuConsola {
     private Repositorio repositorio;
@@ -24,7 +26,7 @@ public class MenuConsola {
             opcion = leerEntero("Elegi una opcion: ");
             opcionElegida(opcion);
         }
-        System.out.println("Hasta luego!");
+        System.out.println("Hasta luego");
     }
 
     private void mostrarMenu() {
@@ -76,6 +78,24 @@ public class MenuConsola {
             System.out.println("Error: " + e.getMessage());
         }
     }
+    private void agregarSaldo() {
+        System.out.print("Documento: ");
+        String documento = sc.nextLine().trim();
+
+        double importe = leerDouble("Importe que desea agregar: ");
+
+        System.out.print("Medio de pago: ");
+        String medioPago = sc.nextLine().trim();
+
+        try {
+            double nuevoSaldo = controladorCuenta.agregarSaldo(documento, importe, medioPago);
+            System.out.println("Saldo agregado correctamente. Nuevo saldo: " + nuevoSaldo);
+        } catch (ImporteInvalidoException | UsuarioNoEncontradoException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 
     private int leerEntero(String mensaje) {
         while (true) {
@@ -83,7 +103,17 @@ public class MenuConsola {
             try {
                 return Integer.parseInt(sc.nextLine().trim());
             } catch (NumberFormatException e) {
-                System.out.println("Ingresá un número válido.");
+                System.out.println("Ingresa un numero valido.");
+            }
+        }
+    }
+    private double leerDouble(String mensaje) {
+        while (true) {
+            System.out.print(mensaje);
+            try {
+                return Double.parseDouble(sc.nextLine().trim().replace(',', '.'));
+            } catch (NumberFormatException e) {
+                System.out.println("Ingresa un importe valido.");
             }
         }
     }
