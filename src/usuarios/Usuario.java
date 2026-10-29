@@ -67,10 +67,13 @@ public class Usuario {
                 estacionOrigen.quitarVehiculo(vehiculo);
                 return viaje;
             } else
-                throw new VehiculoNoDisponibleException("El vehículo seleccionado no se encuentra disponible.");
+                throw new VehiculoNoDisponibleException("El vehiculo seleccionado no se encuentra disponible.");
         } else
-            throw new RetiroNoPermitidoException("Su cuenta no cuenta con el saldo mínimo requerido.");
+            throw new RetiroNoPermitidoException("Su cuenta no cuenta con el saldo minimo requerido.");
     }
 
-   // public ReporteFalla reportarFalla(Vehiculo vehiculo, String descripcion){}        // falta implementación de ReporteFalla
+    public String contenidoArchivo() {
+        return nombre + ";" + documento + ";" + email + ";" + tienePlanMensual + ";" + cuenta.getSaldo();
+    }
+
 }

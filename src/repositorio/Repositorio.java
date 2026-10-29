@@ -5,6 +5,7 @@ import vehiculos.Estacion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
 public class Repositorio {
     private List<Usuario> usuarios;
@@ -14,10 +15,22 @@ public class Repositorio {
         this.usuarios = new ArrayList<>();
         this.estaciones = new ArrayList<>();
     }
+    private void guardarUsuario(Usuario usuario) {
+        try (FileWriter fw = new FileWriter("usuarios.txt", true);
+             BufferedWriter bw = new BufferedWriter(fw)) {
+
+            bw.write(usuario.contenidoArchivo());
+            bw.newLine();
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 
     public void agregarUsuario(Usuario usuario) {
         if (usuario != null && !this.usuarios.contains(usuario)) {
             this.usuarios.add(usuario);
+            guardarUsuario(usuario);
         }
     }
 
@@ -50,6 +63,7 @@ public class Repositorio {
         }
         return null;
     }
+
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
