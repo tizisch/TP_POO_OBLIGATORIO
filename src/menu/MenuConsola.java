@@ -34,6 +34,7 @@ public class MenuConsola {
         System.out.println("1. Registrar usuario");
         System.out.println("2. Buscar usuario");
         System.out.println("3. Agregar saldo");
+        System.out.println("4. Agregar estacion");
         System.out.println("0. Salir");
     }
 
@@ -48,6 +49,8 @@ public class MenuConsola {
             case 3:
                 agregarSaldo();
                 break;
+            case 4:
+                agregarEstacion();
             case 0:
                 break;
             default:
@@ -59,8 +62,15 @@ public class MenuConsola {
 
     private void buscarUsuario() {
         System.out.print("Documento: ");
-        String documento = sc.nextLine();
-        repositorio.buscarUsuario(documento);
+        String documento = sc.nextLine().trim();
+
+        Usuario usuario = repositorio.buscarUsuario(documento);
+
+        if (usuario != null) {
+            System.out.println("Usuario encontrado: " + usuario);
+        } else {
+            System.out.println("No se encontro un usuario con ese documento.");
+        }
     }
 
     private void registrarUsuario() {
@@ -111,7 +121,7 @@ public class MenuConsola {
         while (true) {
             System.out.print(mensaje);
             try {
-                return Double.parseDouble(sc.nextLine().trim().replace(',', '.'));
+                return Double.parseDouble(sc.nextLine().trim());
             } catch (NumberFormatException e) {
                 System.out.println("Ingresa un importe valido.");
             }
