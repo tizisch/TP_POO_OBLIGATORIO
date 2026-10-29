@@ -41,6 +41,7 @@ public abstract class Vehiculo {
     }
 
     public void agregarReporte(ReporteFalla reporte) {
+
     }
 
     public void agregarOrden(OrdenMantenimiento orden) {
