@@ -10,10 +10,14 @@ public class Cuenta {
     private String medioPagoAsociado;
     private List<Movimiento> movimientos;
 
-    public Cuenta(){
-        this.saldo = 0.0;
+    public Cuenta(double saldo) {
+        this.saldo = saldo;
         this.medioPagoAsociado = null;
         this.movimientos = new ArrayList<>();
+    }
+
+    public Cuenta() {
+        this(0.0);
     }
 
     public double getSaldo() {
@@ -22,15 +26,14 @@ public class Cuenta {
 
     public List<Movimiento> getMovimientos() { return movimientos; }
 
-    public double recargar(double importe, String medioPago) throws ImporteInvalidoException {
-        if (importe > 0){
-            saldo += importe;
-            Movimiento mov = new Movimiento(LocalDateTime.now(), importe,"RECARGA");
-            this.agregarMovimiento(mov);
-            if(medioPagoAsociado == null){this.medioPagoAsociado = medioPago;}
+
+    public double recargar(double importe, String medioPago) {
+        if (medioPagoAsociado == null) {
+            this.medioPagoAsociado = medioPago;
         }
-        else
-            throw new ImporteInvalidoException("El importe debe ser mayor a 0");
+        Movimiento mov = new Movimiento(LocalDateTime.now(), importe, "RECARGA");
+        this.agregarMovimiento(mov);
+        this.saldo += importe;
         return this.saldo;
     }
 

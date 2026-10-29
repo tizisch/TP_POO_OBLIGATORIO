@@ -51,6 +51,7 @@ public class MenuConsola {
                 break;
             case 4:
                 agregarEstacion();
+                break;
             case 0:
                 break;
             default:
