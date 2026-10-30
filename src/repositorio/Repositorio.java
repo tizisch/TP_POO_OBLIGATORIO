@@ -16,7 +16,7 @@
             this.estaciones = new ArrayList<>();
         }
         private void guardarUsuario(Usuario usuario) {
-            try (FileWriter fw = new FileWriter("usuarios.txt", true);
+            try (FileWriter fw = new FileWriter("datos/usuarios.txt", true);
                  BufferedWriter bw = new BufferedWriter(fw)) {
 
                 bw.write(usuario.contenidoArchivo());
@@ -55,6 +55,18 @@
         }
 
 
+        private void guardarEstacion(Estacion estacion) {
+            try (FileWriter fw = new FileWriter("datos/estaciones.txt", true);
+                 BufferedWriter bw = new BufferedWriter(fw)) {
+
+                bw.write(estacion.contenidoArchivo());
+                bw.newLine();
+
+            } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+
         public void agregarUsuario(Usuario usuario) {
             if (usuario != null && !this.usuarios.contains(usuario)) {
                 this.usuarios.add(usuario);
@@ -65,6 +77,7 @@
         public void agregarEstacion(Estacion estacion) {
             if (estacion != null && !this.estaciones.contains(estacion)) {
                 this.estaciones.add(estacion);
+                guardarEstacion(estacion);
             }
         }
 

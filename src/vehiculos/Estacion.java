@@ -68,6 +68,10 @@ public void agregarVehiculo(Vehiculo vehiculo){
         return null;
     }
 
+    public String contenidoArchivo() {
+        return codigo + ";" + direccion + ";" + coordenadas + ";" + capacidadMaxima;
+    }
+
     public String getCodigo() {
         return codigo;
     }

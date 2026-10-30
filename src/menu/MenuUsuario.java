@@ -63,7 +63,7 @@ public class MenuUsuario extends Menu{
 
         try {
             Usuario usuario = controladorCuenta.registrarUsuario(nombre, documento, email);
-            System.out.println("Usuario registrado: " + usuario);
+            System.out.println("Usuario registrado: " + nombre + ", Email: " +email);
         } catch (IllegalArgumentException | IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         }
