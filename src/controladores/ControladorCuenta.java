@@ -13,6 +13,8 @@ public class ControladorCuenta {
     }
 
 
+
+
     public double agregarSaldo(String documento, double importe, String medioPago) throws ImporteInvalidoException, UsuarioNoEncontradoException {
         Usuario usuario = repositorio.buscarUsuario(documento);
         if (usuario == null) {
@@ -20,6 +22,7 @@ public class ControladorCuenta {
         }
         return usuario.acreditarSaldo(importe, medioPago);
     }
+
 
 
     public Usuario registrarUsuario(String nombre, String documento, String email) {
@@ -55,4 +58,6 @@ public class ControladorCuenta {
         }
         usuario.suscribirPlanMensual();
     }
+
+
 }

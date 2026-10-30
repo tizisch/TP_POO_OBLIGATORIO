@@ -7,9 +7,13 @@ public class ControladorEstacion {
 
     private Repositorio repositorio;
 
+
+
     public ControladorEstacion(Repositorio repositorio) {
         this.repositorio = repositorio;
     }
+
+
 
     public Estacion registrarEstacion(String codigo, String direccion,
                                       String coordenadas, int capacidadMaxima) {
