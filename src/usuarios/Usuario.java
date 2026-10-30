@@ -83,4 +83,8 @@ public class Usuario {
         } else
             throw new PlanMensualActivoException("Ya tenes el plan mensual.");
     }
+
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
 }
