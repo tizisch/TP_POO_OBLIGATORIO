@@ -26,11 +26,11 @@ public class Viaje {
     public Usuario getUsuario(){return usuario;}
     public Vehiculo getVehiculo(){return vehiculo;}
 
-/* aqui vamos a ver dos cosas que no usamos en la clase viaje y sis metodos, que son el atributo distancia y la
-lista puntos de recorrido. Identificamos que estos dos elementos aunque presentes en el viaje no era muy utiles y
-resutaban en mayor trabajo para crear y depues probar la clase de viajes. No era utiles ya que los metodos como
-finalizarViaje usan el tiempo para reducir la cantidad de bateria usa la cantidad de minutos del viaje, al
-igual que el cacular costo de viajes.
+/* acá vamos a ver dos cosas que no usamos en la clase viaje y sus metodos, que son el atributo distancia y la
+lista puntos de recorrido. Identificamos que estos dos elementos, aunque presentes, en el viaje no eran muy útiles y
+resutaban en mayor trabajo para crear y depues probar la clase de viajes. Los métodos como
+finalizarViaje usan el tiempo para reducir la cantidad de batería usa la cantidad de minutos del viaje, al
+igual que el calcular costo de viajes.
 
 
 

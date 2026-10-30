@@ -40,4 +40,8 @@ public class ControladorCuenta {
 
         return usuario;
     }
+
+    public Usuario buscarUsuario(String documento) {
+        return repositorio.buscarUsuario(documento);
+    }
 }
