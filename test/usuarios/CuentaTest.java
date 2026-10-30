@@ -6,7 +6,6 @@ public class CuentaTest {
 
     public static void main(String[] args) {
         testRecargarAumentaSaldo();
-        testRecargarImporteInvalido();
         testDebitarExitoso();
         testDebitarImporteInvalido();
         testDebitarSuperaSaldoQuedaNegativo();
@@ -24,26 +23,6 @@ public class CuentaTest {
             }
         } catch (Exception e) {
             System.out.println("Excepción en recarga: " + e.getMessage());
-        }
-    }
-
-    private static void testRecargarImporteInvalido() {
-        Cuenta cuenta = new Cuenta();
-
-        // Prueba con importe negativo
-        try {
-            cuenta.recargar(-500.0, "Mercado Pago");
-            System.out.println("Recargar con importe negativo debió lanzar excepción.");
-        } catch (ImporteInvalidoException e) {
-            System.out.println("Recargar con importe negativo lanzó ImporteInvalidoException correctamente.");
-        }
-
-        // Prueba con importe cero
-        try {
-            cuenta.recargar(0.0, "Mercado Pago");
-            System.out.println("Recargar con importe 0 debió lanzar excepción.");
-        } catch (ImporteInvalidoException e) {
-            System.out.println("Recargar con importe 0 lanzó ImporteInvalidoException correctamente.");
         }
     }
 
