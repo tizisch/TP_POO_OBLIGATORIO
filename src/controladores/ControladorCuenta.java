@@ -1,5 +1,7 @@
 package controladores;
 import excepciones.ImporteInvalidoException;
+import excepciones.PlanMensualActivoException;
+import excepciones.SaldoInsuficienteException;
 import excepciones.UsuarioNoEncontradoException;
 import repositorio.Repositorio;
 import usuarios.Usuario;
@@ -43,5 +45,14 @@ public class ControladorCuenta {
 
     public Usuario buscarUsuario(String documento) {
         return repositorio.buscarUsuario(documento);
+    }
+
+    public void suscribirPlanMensual(String documento) throws SaldoInsuficienteException, PlanMensualActivoException, ImporteInvalidoException, UsuarioNoEncontradoException {
+
+        Usuario usuario = repositorio.buscarUsuario(documento);
+        if (usuario == null){
+            throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
+        }
+        usuario.suscribirPlanMensual();
     }
 }

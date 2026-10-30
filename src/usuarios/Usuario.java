@@ -1,7 +1,6 @@
 package usuarios;
 
-import excepciones.ImporteInvalidoException;
-import mantenimiento.ReporteFalla;
+import excepciones.*;
 import vehiculos.Estacion;
 import vehiculos.Estado;
 import vehiculos.Vehiculo;
@@ -10,9 +9,6 @@ import viajes.Viaje;
 import java.util.ArrayList;
 import java.util.List;
 
-import excepciones.RetiroNoPermitidoException;
-import excepciones.VehiculoNoDisponibleException;
-
 public class Usuario {
     private String nombre;
     private String documento;
@@ -20,6 +16,7 @@ public class Usuario {
     private Cuenta cuenta;
     private boolean tienePlanMensual;
     private List<Viaje> viajes;
+    private static final double PRECIO_PLAN_MENSUAL = 15000;
 
     public List<Viaje> getViajes() {
         return viajes;
@@ -76,4 +73,14 @@ public class Usuario {
         return nombre + ";" + documento + ";" + email + ";" + tienePlanMensual + ";" + cuenta.getSaldo();
     }
 
+    public void suscribirPlanMensual() throws ImporteInvalidoException, SaldoInsuficienteException, PlanMensualActivoException {
+        if (!tienePlanMensual){
+            if(cuenta.getSaldo() >= PRECIO_PLAN_MENSUAL){
+            cuenta.debitar(PRECIO_PLAN_MENSUAL,"Plan mensual");
+            tienePlanMensual = true;
+            }else
+                throw new SaldoInsuficienteException("Saldo insuficiente");
+        } else
+            throw new PlanMensualActivoException("Ya tenes el plan mensual.");
+    }
 }

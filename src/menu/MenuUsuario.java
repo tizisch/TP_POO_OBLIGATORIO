@@ -25,6 +25,7 @@ public class MenuUsuario extends Menu{
         System.out.println("2. Agregar saldo.");
         System.out.println("3. Retirar vehículo.");
         System.out.println("4. Devolver vehículo.");
+        System.out.println("5. Suscribirse al plan mensual");
         System.out.println("0. Volver");
     }
 
@@ -43,7 +44,8 @@ public class MenuUsuario extends Menu{
             case 4:
                 devolverVehiculo();
                 break;
-            case 0:
+            case 5:
+                suscribirPlanMensual();
                 break;
             default:
                 System.out.println("Opcion invalida.");
@@ -109,6 +111,18 @@ public class MenuUsuario extends Menu{
             double costo = controladorViajes.devolverVehiculo(documento, codigoEstacion);
             System.out.println("Vehiculo devuelto. Costo del viaje: $" + costo);
         } catch (UsuarioNoEncontradoException | EstacionNoEncontradaException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    private void suscribirPlanMensual() {
+        System.out.print("Documento: ");
+        String documento = sc.nextLine().trim();
+
+        try {
+            controladorCuenta.suscribirPlanMensual(documento);
+            System.out.println("Te suscribiste al plan mensual.");
+        } catch (SaldoInsuficienteException | PlanMensualActivoException | ImporteInvalidoException | UsuarioNoEncontradoException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
