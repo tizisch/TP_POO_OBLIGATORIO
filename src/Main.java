@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Repositorio repositorio = new Repositorio();
+        repositorio.cargarUsuarios();
 
         ControladorCuenta controladorCuenta = new ControladorCuenta(repositorio);
         ControladorViajes controladorViajes = new ControladorViajes(repositorio);

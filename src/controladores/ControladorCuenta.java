@@ -20,7 +20,9 @@ public class ControladorCuenta {
         if (usuario == null) {
             throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
         }
-        return usuario.acreditarSaldo(importe, medioPago);
+        double nuevoSaldo = usuario.acreditarSaldo(importe, medioPago);
+        repositorio.guardarTodos();
+        return nuevoSaldo;
     }
 
 
@@ -57,6 +59,8 @@ public class ControladorCuenta {
             throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
         }
         usuario.suscribirPlanMensual();
+        repositorio.guardarTodos();
+
     }
 
 
