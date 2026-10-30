@@ -26,6 +26,34 @@
                 System.out.println("Error: " + e.getMessage());
             }
         }
+        public void cargarUsuarios() {
+            File archivo = new File("usuarios.txt");
+            if (!archivo.exists()) {
+                return;
+            }
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    if (linea.isBlank()) continue;
+                    Usuario usuario = Usuario.desdeLinea(linea);
+                    this.usuarios.add(usuario);
+                }
+            } catch (IOException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error al cargar usuarios: " + e.getMessage());
+            }
+        }
+
+        public void guardarTodos() {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter("usuarios.txt"))) {
+                for (Usuario u : usuarios) {
+                    bw.write(u.contenidoArchivo());
+                    bw.newLine();
+                }
+            } catch (IOException e) {
+                System.out.println("Error al guardar usuarios: " + e.getMessage());
+            }
+        }
+
 
         public void agregarUsuario(Usuario usuario) {
             if (usuario != null && !this.usuarios.contains(usuario)) {

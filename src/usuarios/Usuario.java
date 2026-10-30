@@ -84,6 +84,20 @@ public class Usuario {
             throw new PlanMensualActivoException("Ya tenes el plan mensual.");
     }
 
+    public static Usuario desdeLinea(String linea) {
+        String[] partes = linea.split(";");
+        String nombre = partes[0];
+        String documento = partes[1];
+        String email = partes[2];
+        boolean plan = Boolean.parseBoolean(partes[3]);
+        double saldo = Double.parseDouble(partes[4]);
+
+        Usuario usuario = new Usuario(nombre, documento, email);
+        usuario.tienePlanMensual = plan;
+        usuario.cuenta = new Cuenta(saldo);
+        return usuario;
+    }
+
     public Cuenta getCuenta() {
         return cuenta;
     }
