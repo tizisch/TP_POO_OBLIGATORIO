@@ -1,7 +1,5 @@
 package viajes;
 
-import usuarios.Usuario;
-
 import java.time.Duration;
 
 public class PlanMensual implements Promocion{

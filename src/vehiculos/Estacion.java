@@ -95,5 +95,10 @@ public void agregarVehiculo(Vehiculo vehiculo){
     public List<Vehiculo> getVehiculosEstacionados() {
         return vehiculosEstacionados;
     }
+
+    @Override
+    public String toString() {
+        return codigo + " - " + direccion + " (capacidad " + capacidadMaxima + ")";
+    }
 }
 

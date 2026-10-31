@@ -52,31 +52,31 @@ public class Swing {
         botonRegistrarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuUsuario.registrarUsuario()).start();
+                menuUsuario.registrarUsuario();
             }
         });
         botonAgregarSaldo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuUsuario.agregarSaldo()).start();
+                menuUsuario.agregarSaldo();
             }
         });
         botonRetirarVehiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuUsuario.retirarVehiculo()).start();
+                menuUsuario.retirarVehiculo();
             }
         });
         botonDevolverVehiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuUsuario.devolverVehiculo()).start();
+                menuUsuario.devolverVehiculo();
             }
         });
         botonPlanMensual.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuUsuario.suscribirPlanMensual()).start();
+                menuUsuario.suscribirPlanMensual();
             }
         });
 
@@ -97,20 +97,20 @@ public class Swing {
         botonBuscarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuAdmin.buscarUsuario()).start();
+                menuAdmin.buscarUsuario();
             }
         });
         botonAgregarEstacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(() -> menuAdmin.agregarEstacion()).start();
+                menuAdmin.agregarEstacion();
             }
         });
 
         botonSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hasta luego");
+                JOptionPane.showMessageDialog(null,"Hasta luego");
                 System.exit(0);
             }
         });
