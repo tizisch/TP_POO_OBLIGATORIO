@@ -39,16 +39,11 @@ public class Estacion {
             return false;
         }
     }
-public void agregarVehiculo(Vehiculo vehiculo){
-        if (vehiculosEstacionados.size()<capacidadMaxima){
+    public void agregarVehiculo(Vehiculo vehiculo) {
+        if (vehiculo != null) {
             vehiculosEstacionados.add(vehiculo);
-
         }
-        else{
-            System.out.println("no se puede dejar el vehiculo en esta estacion");
-
-        }
-}
+    }
 
     public void quitarVehiculo(Vehiculo quitar) {
         if (quitar != null) {
