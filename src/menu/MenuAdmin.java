@@ -6,6 +6,7 @@ import usuarios.Usuario;
 import vehiculos.Estacion;
 
 import javax.swing.*;
+import java.util.Collections;
 
 public class MenuAdmin extends Menu{
     private ControladorCuenta controladorCuenta;
@@ -22,6 +23,7 @@ public class MenuAdmin extends Menu{
         Usuario usuario = controladorCuenta.buscarUsuario(documento);
 
         if (usuario != null) {
+            Collections.sort(usuario.getViajes());
             JOptionPane.showMessageDialog(null,"Usuario encontrado: " + usuario);
         } else {
             JOptionPane.showMessageDialog(null,"No se encontro un usuario con ese documento.");

@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Viaje {
+public class Viaje implements Comparable<Viaje>{
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
     private double distanciaRecorrido;
@@ -42,6 +42,10 @@ public class Viaje {
         this.fechaHoraFin = null;
         this.estacionDestino = null;
         this.distanciaRecorrido = 0.0;
+    }
+    @Override
+    public int compareTo(Viaje otroViaje) {
+        return otroViaje.fechaHoraInicio.compareTo(this.fechaHoraInicio);
     }
 
     public void finalizar(Estacion estacionDestino) {
