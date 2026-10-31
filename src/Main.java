@@ -2,9 +2,9 @@ import controladores.ControladorCuenta;
 import controladores.ControladorEstacion;
 import controladores.ControladorViajes;
 import menu.MenuAdmin;
-import menu.MenuPrincipal;
 import menu.MenuUsuario;
 import repositorio.Repositorio;
+import vistas.Swing;
 
 import java.util.Scanner;
 
@@ -21,6 +21,6 @@ public class Main {
         MenuUsuario menuUsuario = new MenuUsuario(sc, controladorCuenta, controladorViajes);
         MenuAdmin menuAdmin = new MenuAdmin(sc, controladorCuenta, controladorEstacion);
 
-        new MenuPrincipal(sc, menuUsuario, menuAdmin).iniciar();
+        new Swing(menuUsuario, menuAdmin).iniciar();
     }
 }

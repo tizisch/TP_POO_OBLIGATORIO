@@ -53,7 +53,7 @@ public class MenuUsuario extends Menu{
         }
     }
 
-    private void registrarUsuario() {
+    public void registrarUsuario() {
         System.out.print("Nombre: ");
         String nombre = sc.nextLine();
         System.out.print("Documento: ");
@@ -69,7 +69,7 @@ public class MenuUsuario extends Menu{
         }
     }
 
-    private void agregarSaldo() {
+    public void agregarSaldo() {
         System.out.print("Documento: ");
         String documento = sc.nextLine().trim();
         double importe = leerDouble("Importe que desea agregar: ");
@@ -84,7 +84,7 @@ public class MenuUsuario extends Menu{
         }
     }
 
-    private void retirarVehiculo() {
+    public void retirarVehiculo() {
         System.out.print("Documento: ");
         String documento = sc.nextLine().trim();
         System.out.print("Codigo de estacion: ");
@@ -101,7 +101,7 @@ public class MenuUsuario extends Menu{
         }
     }
 
-    private void devolverVehiculo() {
+    public void devolverVehiculo() {
         System.out.print("Documento: ");
         String documento = sc.nextLine().trim();
         System.out.print("Codigo de estacion de devolucion: ");
@@ -115,7 +115,7 @@ public class MenuUsuario extends Menu{
         }
     }
 
-    private void suscribirPlanMensual() {
+    public void suscribirPlanMensual() {
         System.out.print("Documento: ");
         String documento = sc.nextLine().trim();
 

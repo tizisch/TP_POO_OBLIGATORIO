@@ -1,32 +1,127 @@
 package vistas;
 
+import menu.MenuAdmin;
+import menu.MenuUsuario;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Swing {
-    private JTextField textField1;
-    private JTextField textField2;
+    private JPanel Main;
+    private JButton botonSalir;
+    private JButton botonUsario;
+    private JButton BotonAdmin;
+    private JPanel menuPrincipal;
 
-    public Swing() {
-        if (textField1 != null) {
-            textField1.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    String texto1 = textField1.getText();
-                    System.out.println("Texto ingresado en caja 1: " + texto1);
-                }
-            });
-        }
+    private JPanel panelUsuario;
+    private JButton botonRegistrarUsuario;
+    private JButton botonAgregarSaldo;
+    private JButton botonRetirarVehiculo;
+    private JButton botonDevolverVehiculo;
+    private JButton botonPlanMensual;
+    private JButton botonVolverUsuario;
 
-        if (textField2 != null) {
-            textField2.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    String texto2 = textField2.getText();
-                    System.out.println("Texto ingresado en caja 2: " + texto2);
-                }
-            });
-        }
+    private JPanel panelAdmin;
+    private JButton botonBuscarUsuario;
+    private JButton botonAgregarEstacion;
+    private JButton botonVolverAdmin;
+
+    private MenuUsuario menuUsuario;
+    private MenuAdmin menuAdmin;
+
+    public Swing(MenuUsuario menuUsuario, MenuAdmin menuAdmin) {
+        this.menuUsuario = menuUsuario;
+        this.menuAdmin = menuAdmin;
+
+        botonUsario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "vistaUsuario");
+            }
+        });
+        botonVolverUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "Card1");
+            }
+        });
+        botonRegistrarUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuUsuario.registrarUsuario()).start();
+            }
+        });
+        botonAgregarSaldo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuUsuario.agregarSaldo()).start();
+            }
+        });
+        botonRetirarVehiculo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuUsuario.retirarVehiculo()).start();
+            }
+        });
+        botonDevolverVehiculo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuUsuario.devolverVehiculo()).start();
+            }
+        });
+        botonPlanMensual.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuUsuario.suscribirPlanMensual()).start();
+            }
+        });
+
+        BotonAdmin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "vistaAdmin");
+            }
+        });
+        botonVolverAdmin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "Card1");
+            }
+        });
+        botonBuscarUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuAdmin.buscarUsuario()).start();
+            }
+        });
+        botonAgregarEstacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> menuAdmin.agregarEstacion()).start();
+            }
+        });
+
+        botonSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Hasta luego");
+                System.exit(0);
+            }
+        });
+    }
+
+    public void iniciar() {
+        JFrame frame = new JFrame("Schiapni Express");
+        frame.setContentPane(Main);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 400);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 }
