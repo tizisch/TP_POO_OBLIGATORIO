@@ -13,6 +13,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Repositorio repositorio = new Repositorio();
         repositorio.cargarUsuarios();
+        repositorio.cargarEstaciones();
+        repositorio.cargarVehiculos();
 
         ControladorCuenta controladorCuenta = new ControladorCuenta(repositorio);
         ControladorViajes controladorViajes = new ControladorViajes(repositorio);

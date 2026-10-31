@@ -71,7 +71,7 @@ public class ControladorViajes {
 
                 }
 
-
+                repositorio.guardarTodos();
                 return totalViaje;
             }
         }

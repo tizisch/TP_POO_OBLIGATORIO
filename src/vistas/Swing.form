@@ -29,13 +29,13 @@
               <text value="Bienvenido a Schiapni Express"/>
             </properties>
           </component>
-          <component id="c226e" class="javax.swing.JButton" binding="botonUsario">
+          <component id="c226e" class="javax.swing.JButton" binding="botonUsuario">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="1.Usario"/>
+              <text value="Usuario"/>
             </properties>
           </component>
           <component id="892d2" class="javax.swing.JButton" binding="BotonAdmin">
@@ -44,7 +44,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="2.Administrador"/>
+              <text value="Administrador"/>
             </properties>
           </component>
           <component id="d5caf" class="javax.swing.JButton" binding="botonSalir">
@@ -84,7 +84,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="1. Registrar usuario"/>
+              <text value="Registrar usuario"/>
             </properties>
           </component>
           <component id="u0003" class="javax.swing.JButton" binding="botonAgregarSaldo">
@@ -93,7 +93,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="2. Agregar saldo"/>
+              <text value="Agregar saldo"/>
             </properties>
           </component>
           <component id="u0004" class="javax.swing.JButton" binding="botonRetirarVehiculo">
@@ -102,7 +102,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="3. Retirar vehículo"/>
+              <text value="Retirar vehículo"/>
             </properties>
           </component>
           <component id="u0005" class="javax.swing.JButton" binding="botonDevolverVehiculo">
@@ -111,7 +111,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="4. Devolver vehículo"/>
+              <text value="Devolver vehículo"/>
             </properties>
           </component>
           <component id="u0006" class="javax.swing.JButton" binding="botonPlanMensual">
@@ -120,7 +120,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="5. Suscribirse al plan mensual"/>
+              <text value="Suscribirse al plan mensual"/>
             </properties>
           </component>
           <component id="u0007" class="javax.swing.JButton" binding="botonVolverUsuario">
@@ -129,7 +129,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="0. Volver"/>
+              <text value="Volver"/>
             </properties>
           </component>
         </children>
@@ -160,7 +160,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="1. Buscar usuario"/>
+              <text value="Buscar usuario"/>
             </properties>
           </component>
           <component id="a0003" class="javax.swing.JButton" binding="botonAgregarEstacion">
@@ -169,7 +169,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="2. Agregar estación"/>
+              <text value="Agregar estación"/>
             </properties>
           </component>
           <component id="a0004" class="javax.swing.JButton" binding="botonVolverAdmin">
@@ -178,7 +178,7 @@
               <gridbag weightx="1.0" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="0. Volver"/>
+              <text value="Volver"/>
             </properties>
           </component>
         </children>
