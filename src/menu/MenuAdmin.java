@@ -39,7 +39,7 @@ public class MenuAdmin extends Menu{
         }
     }
 
-    private void buscarUsuario() {
+    public void buscarUsuario() {
         System.out.print("Documento: ");
         String documento = sc.nextLine().trim();
 
@@ -52,7 +52,7 @@ public class MenuAdmin extends Menu{
         }
     }
 
-    private void agregarEstacion() {
+    public void agregarEstacion() {
         System.out.print("Codigo: ");
         String codigo = sc.nextLine().trim();
         System.out.print("Direccion: ");
@@ -71,5 +71,3 @@ public class MenuAdmin extends Menu{
     }
 
 }
-
-
