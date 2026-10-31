@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Swing {
     private JPanel Main;
     private JButton botonSalir;
-    private JButton botonUsario;
+    private JButton botonUsuario;
     private JButton BotonAdmin;
     private JPanel menuPrincipal;
 
@@ -35,7 +35,7 @@ public class Swing {
         this.menuUsuario = menuUsuario;
         this.menuAdmin = menuAdmin;
 
-        botonUsario.addActionListener(new ActionListener() {
+        botonUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CardLayout cl = (CardLayout) Main.getLayout();
@@ -117,7 +117,7 @@ public class Swing {
     }
 
     public void iniciar() {
-        JFrame frame = new JFrame("Schiapni Express");
+        JFrame frame = new JFrame("Schipani Express");
         frame.setContentPane(Main);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);

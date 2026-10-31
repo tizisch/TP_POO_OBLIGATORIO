@@ -6,6 +6,9 @@ import usuarios.Cuenta;
 import usuarios.Usuario;
 import vehiculos.Estacion;
 import vehiculos.Vehiculo;
+import viajes.PlanMensual;
+import viajes.PrimerViaje;
+import viajes.Promocion;
 import viajes.Viaje;
 
 
@@ -60,18 +63,25 @@ public class ControladorViajes {
             if (viaje.getFechaHoraFin() == null) {
                 viaje.finalizar(estacion);
                 estacion.agregarVehiculo(viaje.getVehiculo());
-                double totalViaje=viaje.calcularCosto(null);
-                if(totalViaje > 0){
 
-                Cuenta cuentaUsuario=usuario.getCuenta();
-                try{cuentaUsuario.debitar(totalViaje, "se ha debitado el viaje en la cuenta del usario");}
-                catch(ImporteInvalidoException e){
-                    System.out.println(e.getMessage());
+                Promocion promo = null;
+                if (usuario.getTienePlanMensual()) {
+                    promo = new PlanMensual();
+                } else if (usuario.getViajes().size() == 1) {
+                    promo = new PrimerViaje();
+                }
+                double totalViaje = viaje.calcularCosto(promo);
+
+                if (totalViaje > 0) {
+                    Cuenta cuentaUsuario = usuario.getCuenta();
+                    try {
+                        cuentaUsuario.debitar(totalViaje, "se ha debitado el viaje en la cuenta del usuario");
+                    } catch (ImporteInvalidoException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
 
-                }
-
-
+                repositorio.guardarTodos();
                 return totalViaje;
             }
         }

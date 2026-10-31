@@ -1,8 +1,9 @@
     package repositorio;
 
     import usuarios.Usuario;
-    import vehiculos.Estacion;
+    import vehiculos.*;
 
+    import java.time.LocalDate;
     import java.util.ArrayList;
     import java.util.List;
     import java.io.*;
@@ -27,7 +28,7 @@
             }
         }
         public void cargarUsuarios() {
-            File archivo = new File("usuarios.txt");
+            File archivo = new File("datos/usuarios.txt");
             if (!archivo.exists()) {
                 return;
             }
@@ -44,7 +45,7 @@
         }
 
         public void guardarTodos() {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter("usuarios.txt"))) {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter("datos/usuarios.txt"))) {
                 for (Usuario u : usuarios) {
                     bw.write(u.contenidoArchivo());
                     bw.newLine();
@@ -64,6 +65,23 @@
 
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
+            }
+        }
+
+        public void cargarEstaciones() {
+            File archivo = new File("datos/estaciones.txt");
+            if (!archivo.exists()) {
+                return;
+            }
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    if (linea.isBlank()) continue;
+                    String[] p = linea.split(";");
+                    this.estaciones.add(new Estacion(p[0], p[1], p[2], Integer.parseInt(p[3])));
+                }
+            } catch (IOException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error al cargar estaciones: " + e.getMessage());
             }
         }
 
@@ -103,6 +121,36 @@
                 }
             }
             return null;
+        }
+
+        public void cargarVehiculos() {
+            File archivo = new File("datos/vehiculos.txt");
+            if (!archivo.exists()) {
+                return;
+            }
+            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    if (linea.isBlank()) continue;
+                    String[] p = linea.split(";");
+                    Vehiculo v = null;
+                    switch (p[0]) {
+                        case "BICICLETA_COMUN":
+                            v = new BicicletaComun(p[1], LocalDate.parse(p[2]), Integer.parseInt(p[3]), Estado.DISPONIBLE);
+                            break;
+                        case "BICICLETA_ELECTRICA":
+                            v = new BicicletaElectrica(p[1], LocalDate.parse(p[2]), Double.parseDouble(p[3]));
+                            break;
+                        case "MONOPATIN_ELECTRICO":
+                            v = new MonopatinElectrico(p[1], LocalDate.parse(p[2]), Double.parseDouble(p[3]));
+                            break;
+                    }
+                    Estacion estacion = buscarEstacion(p[4]);
+                    if (v != null && estacion != null) estacion.agregarVehiculo(v);
+                }
+            } catch (IOException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
+                System.out.println("Error al cargar vehiculos: " + e.getMessage());
+            }
         }
 
         public List<Usuario> getUsuarios() {
