@@ -3,6 +3,9 @@ package controladores;
 import repositorio.Repositorio;
 import vehiculos.Estacion;
 
+import java.util.Comparator;
+import java.util.List;
+
 public class ControladorEstacion {
 
     private Repositorio repositorio;
@@ -36,5 +39,17 @@ public class ControladorEstacion {
         Estacion estacion = new Estacion(codigo, direccion, coordenadas, capacidadMaxima);
         repositorio.agregarEstacion(estacion);
         return estacion;
+    }
+
+
+    public List<Estacion> obtenerEstacionesOrdenadasPorCapacidad() {
+        List<Estacion> estaciones = repositorio.getEstaciones();
+        estaciones.sort(new Comparator<Estacion>() {
+            @Override
+            public int compare(Estacion e1, Estacion e2) {
+                return Integer.compare(e2.getCapacidadMaxima(), e1.getCapacidadMaxima());
+            }
+        });
+        return estaciones;
     }
 }

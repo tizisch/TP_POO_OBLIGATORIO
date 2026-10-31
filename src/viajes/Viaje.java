@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Viaje {
+public class Viaje implements Comparable<Viaje>{
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
     private double distanciaRecorrido;
@@ -24,17 +24,16 @@ public class Viaje {
     public Usuario getUsuario(){return usuario;}
     public Vehiculo getVehiculo(){return vehiculo;}
 
-/* acá vamos a ver dos cosas que no usamos en la clase viaje y sus metodos, que son el atributo distancia y la
-lista puntos de recorrido. Identificamos que estos dos elementos, aunque presentes, en el viaje no eran muy útiles y
-resutaban en mayor trabajo para crear y depues probar la clase de viajes. Los métodos como
-finalizarViaje usan el tiempo para reducir la cantidad de batería usa la cantidad de minutos del viaje, al
-igual que el calcular costo de viajes.
-
-
-
-
-
-  */
+    /*
+     * Nota sobre atributos del diseño inicial que no se utilizan en la lógica actual:
+     * - distanciaRecorrido (atributo) y puntosRecorrido (lista eliminada respecto al diseño original):
+     *   Aunque formaban parte del modelo conceptual inicial del viaje, se decidió no utilizarlos
+     *   porque tanto el consumo de batería (en finalizar) como el cálculo de la tarifa (en calcularCosto)
+     *   se determinan en función de la duración en minutos del viaje (entre fechaHoraInicio y fechaHoraFin).
+     * - estacionOrigen y estacionDestino:
+     *   Se registran al iniciar y finalizar el viaje para mantener la trazabilidad del trayecto,
+     *   aunque no intervienen directamente en el cálculo del costo.
+     */
     public Viaje(Usuario usuario, Vehiculo vehiculo, Estacion estacionOrigen) {
         this.usuario = usuario;
         this.vehiculo = vehiculo;
@@ -43,6 +42,10 @@ igual que el calcular costo de viajes.
         this.fechaHoraFin = null;
         this.estacionDestino = null;
         this.distanciaRecorrido = 0.0;
+    }
+    @Override
+    public int compareTo(Viaje otroViaje) {
+        return otroViaje.fechaHoraInicio.compareTo(this.fechaHoraInicio);
     }
 
     public void finalizar(Estacion estacionDestino) {
