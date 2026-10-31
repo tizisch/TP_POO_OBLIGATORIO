@@ -1,44 +1,29 @@
 package menu;
 
-import java.util.Scanner;
+import javax.swing.*;
 
 public abstract class Menu {
-    protected Scanner sc;
-
-    public Menu(Scanner sc) {
-        this.sc = sc;
-    }
-
-    public void iniciar() {
-        int opcion = -1;
-        while (opcion != 0) {
-            mostrarMenu();
-            opcion = leerEntero("Elegi una opcion: ");
-            opcionElegida(opcion);
-        }
-    }
-
-    protected abstract void mostrarMenu();
-    protected abstract void opcionElegida(int opcion);
 
     protected int leerEntero(String mensaje) {
         while (true) {
-            System.out.print(mensaje);
+            String texto = JOptionPane.showInputDialog(mensaje);
+            if (texto == null){return -1;}
             try {
-                return Integer.parseInt(sc.nextLine().trim());
+                return Integer.parseInt(texto);
             } catch (NumberFormatException e) {
-                System.out.println("Ingresa un numero valido.");
+                JOptionPane.showMessageDialog(null,"Ingresá un numero valido.");
             }
         }
     }
 
     protected double leerDouble(String mensaje) {
         while (true) {
-            System.out.print(mensaje);
+            String texto = JOptionPane.showInputDialog(mensaje);
+            if (texto == null){return -1;}
             try {
-                return Double.parseDouble(sc.nextLine().trim());
+                return Double.parseDouble(texto);
             } catch (NumberFormatException e) {
-                System.out.println("Ingresa un importe valido.");
+                JOptionPane.showMessageDialog(null,"Ingresá un importe valido.");
             }
         }
     }

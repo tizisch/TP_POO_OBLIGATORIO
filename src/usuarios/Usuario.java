@@ -101,4 +101,11 @@ public class Usuario {
     public Cuenta getCuenta() {
         return cuenta;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " (DNI " + documento + ") - Email: " + email
+                + " - Saldo: $" + cuenta.getSaldo()
+                + " - Plan mensual: " + (tienePlanMensual ? "Si" : "No");
+    }
 }

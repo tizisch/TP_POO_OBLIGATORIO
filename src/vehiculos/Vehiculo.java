@@ -1,8 +1,6 @@
 package vehiculos;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Vehiculo {
     private String codigo;

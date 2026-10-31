@@ -4,126 +4,90 @@ import controladores.ControladorCuenta;
 import controladores.ControladorViajes;
 import excepciones.*;
 import usuarios.Usuario;
-
-import java.util.Scanner;
+import javax.swing.*;
 
 public class MenuUsuario extends Menu{
     private ControladorCuenta controladorCuenta;
     private ControladorViajes controladorViajes;
 
-    public MenuUsuario(Scanner sc,ControladorCuenta controladorCuenta, ControladorViajes controladorViajes) {
-        super(sc);
+    public MenuUsuario(ControladorCuenta controladorCuenta, ControladorViajes controladorViajes) {
+
         this.controladorCuenta = controladorCuenta;
         this.controladorViajes = controladorViajes;
 
     }
 
-    @Override
-    public void mostrarMenu() {
-        System.out.println("\n-----Menú Usuario -----");
-        System.out.println("1. Registrar usuario");
-        System.out.println("2. Agregar saldo.");
-        System.out.println("3. Retirar vehículo.");
-        System.out.println("4. Devolver vehículo.");
-        System.out.println("5. Suscribirse al plan mensual");
-        System.out.println("0. Volver");
-    }
-
-    @Override
-    protected void opcionElegida(int opcion) {
-        switch (opcion) {
-            case 1:
-                registrarUsuario();
-                break;
-            case 2:
-                agregarSaldo();
-                break;
-            case 3:
-                retirarVehiculo();
-                break;
-            case 4:
-                devolverVehiculo();
-                break;
-            case 5:
-                suscribirPlanMensual();
-                break;
-            default:
-                System.out.println("Opcion invalida.");
-                break;
-        }
-    }
-
     public void registrarUsuario() {
-        System.out.print("Nombre: ");
-        String nombre = sc.nextLine();
-        System.out.print("Documento: ");
-        String documento = sc.nextLine();
-        System.out.print("Email: ");
-        String email = sc.nextLine();
+        String nombre = JOptionPane.showInputDialog("Nombre:");
+        if(nombre == null) return;
+        String documento = JOptionPane.showInputDialog("Documento:");
+        if(documento == null) return;
+        String email = JOptionPane.showInputDialog("Email:");
+        if (email == null) return;
 
         try {
             Usuario usuario = controladorCuenta.registrarUsuario(nombre, documento, email);
-            System.out.println("Usuario registrado: " + nombre + ", Email: " +email);
+            JOptionPane.showMessageDialog(null,"Usuario registrado: " + nombre + ", Email: " +email);
         } catch (IllegalArgumentException | IllegalStateException e) {
-            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
         }
     }
 
     public void agregarSaldo() {
-        System.out.print("Documento: ");
-        String documento = sc.nextLine().trim();
+        String documento = JOptionPane.showInputDialog("Documento:");
+        if(documento == null) return;
         double importe = leerDouble("Importe que desea agregar: ");
-        System.out.print("Medio de pago: ");
-        String medioPago = sc.nextLine().trim();
+        if(importe == -1) return;
+        String medioPago = JOptionPane.showInputDialog("Medio de pago:");
+        if (medioPago == null) return;
 
         try {
             double nuevoSaldo = controladorCuenta.agregarSaldo(documento, importe, medioPago);
-            System.out.println("Saldo agregado correctamente. Nuevo saldo: $" + nuevoSaldo);
+            JOptionPane.showMessageDialog(null,"Saldo agregado correctamente. Nuevo saldo: $" + nuevoSaldo);
         } catch (ImporteInvalidoException | UsuarioNoEncontradoException e) {
-            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
         }
     }
 
     public void retirarVehiculo() {
-        System.out.print("Documento: ");
-        String documento = sc.nextLine().trim();
-        System.out.print("Codigo de estacion: ");
-        String codigoEstacion = sc.nextLine().trim();
-        System.out.print("Codigo de vehiculo: ");
-        String codigoVehiculo = sc.nextLine().trim();
+        String documento = JOptionPane.showInputDialog("Documento:");
+        if(documento == null) return;
+        String codigoEstacion = JOptionPane.showInputDialog("Código de estación:");
+        if(codigoEstacion == null) return;
+        String codigoVehiculo = JOptionPane.showInputDialog("Codigo de vehiculo:");
+        if (codigoVehiculo == null) return;
 
         try {
             controladorViajes.retirarVehiculo(documento, codigoVehiculo, codigoEstacion);
-            System.out.println("Vehiculo retirado. Buen viaje!");
-        } catch (UsuarioNoEncontradoException | EstacionNoEncontradaException
-                 | VehiculoNoDisponibleException | RetiroNoPermitidoException e) {
-            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Vehiculo retirado. Buen viaje!");
+        } catch (UsuarioNoEncontradoException | EstacionNoEncontradaException | VehiculoNoDisponibleException | RetiroNoPermitidoException e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
         }
     }
 
     public void devolverVehiculo() {
-        System.out.print("Documento: ");
-        String documento = sc.nextLine().trim();
-        System.out.print("Codigo de estacion de devolucion: ");
-        String codigoEstacion = sc.nextLine().trim();
+        String documento = JOptionPane.showInputDialog("Documento:");
+        if (documento == null) return;
+        String codigoEstacion = JOptionPane.showInputDialog("Código de estación de devolucion:");
+        if (codigoEstacion == null) return;
 
         try {
             double costo = controladorViajes.devolverVehiculo(documento, codigoEstacion);
-            System.out.println("Vehiculo devuelto. Costo del viaje: $" + costo);
+            JOptionPane.showMessageDialog(null,"Vehiculo devuelto. Costo del viaje: $" + costo);
         } catch (UsuarioNoEncontradoException | EstacionNoEncontradaException e) {
-            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
         }
     }
 
     public void suscribirPlanMensual() {
-        System.out.print("Documento: ");
-        String documento = sc.nextLine().trim();
+        String documento = JOptionPane.showInputDialog("Documento:");
+        if (documento == null) return;
 
         try {
             controladorCuenta.suscribirPlanMensual(documento);
-            System.out.println("Te suscribiste al plan mensual.");
+            JOptionPane.showMessageDialog(null,"Te suscribiste al plan mensual.");
         } catch (SaldoInsuficienteException | PlanMensualActivoException | ImporteInvalidoException | UsuarioNoEncontradoException e) {
-            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
         }
     }
 }

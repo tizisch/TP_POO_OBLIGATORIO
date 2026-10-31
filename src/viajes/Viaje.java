@@ -6,7 +6,6 @@ import vehiculos.*;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Viaje {
@@ -17,7 +16,6 @@ public class Viaje {
     private Vehiculo vehiculo;
     private Estacion estacionOrigen;
     private Estacion estacionDestino;
-    private List<PuntoRecorrido> puntosRecorrido;
 
     public LocalDateTime getFechaHoraFin() {
         return fechaHoraFin;
@@ -45,7 +43,6 @@ igual que el calcular costo de viajes.
         this.fechaHoraFin = null;
         this.estacionDestino = null;
         this.distanciaRecorrido = 0.0;
-        this.puntosRecorrido = new ArrayList<>();
     }
 
     public void finalizar(Estacion estacionDestino) {
