@@ -91,9 +91,26 @@
                   <toolTipText value="Buscar usuarios, agregar estaciones y ver reportes"/>
                 </properties>
               </component>
-              <component id="d5caf" class="javax.swing.JButton" binding="botonSalir">
+              <component id="op001" class="javax.swing.JButton" binding="botonOperador">
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="80" bottom="5" right="80" weightx="1.0" weighty="0.0" ipady="10"/>
+                </constraints>
+                <properties>
+                  <background color="-1292135"/>
+                  <borderPainted value="false"/>
+                  <focusPainted value="false"/>
+                  <font name="Segoe UI" size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <icon value="vistas/iconos/estacion.png"/>
+                  <iconTextGap value="12"/>
+                  <text value="&amp;Operador"/>
+                  <toolTipText value="Redistribuir vehículos entre estaciones"/>
+                </properties>
+              </component>
+              <component id="d5caf" class="javax.swing.JButton" binding="botonSalir">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                   <gridbag top="5" left="80" bottom="5" right="80" weightx="1.0" weighty="0.0" ipady="10"/>
                 </constraints>
                 <properties>
@@ -398,6 +415,93 @@
               <component id="a0004" class="javax.swing.JButton" binding="botonVolverAdmin">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="14" left="50" bottom="5" right="50" weightx="1.0" weighty="0.0" ipady="10"/>
+                </constraints>
+                <properties>
+                  <background color="-1710101"/>
+                  <borderPainted value="false"/>
+                  <focusPainted value="false"/>
+                  <font name="Segoe UI" size="14" style="1"/>
+                  <foreground color="-13156015"/>
+                  <icon value="vistas/iconos/volver.png"/>
+                  <iconTextGap value="12"/>
+                  <text value="&amp;Volver"/>
+                  <toolTipText value="Volver al menú principal"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <grid id="e5f6g" binding="panelOperador" layout-manager="GridBagLayout">
+        <constraints>
+          <card name="vistaOperador"/>
+        </constraints>
+        <properties>
+          <background color="-723205"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="b0004" layout-manager="GridBagLayout">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="1.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <background color="-723205"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="l0004" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="6" right="0" weightx="1.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <icon value="vistas/logo_chico.png"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="o0001" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag top="0" left="0" bottom="16" right="0" weightx="1.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <font name="Segoe UI" size="22" style="1"/>
+                  <foreground color="-14997957"/>
+                  <text value="&lt;html&gt;&lt;span style=&quot;color:#1B263B&quot;&gt;Menú&lt;/span&gt; &lt;span style=&quot;color:#00A67E&quot;&gt;Operador&lt;/span&gt;&lt;/html&gt;"/>
+                </properties>
+              </component>
+              <component id="o0002" class="javax.swing.JButton" binding="botonRedistribuir">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="5" left="50" bottom="5" right="50" weightx="1.0" weighty="0.0" ipady="10"/>
+                </constraints>
+                <properties>
+                  <background color="-1292135"/>
+                  <borderPainted value="false"/>
+                  <focusPainted value="false"/>
+                  <font name="Segoe UI" size="14" style="1"/>
+                  <foreground color="-1"/>
+                  <icon value="vistas/iconos/estacion.png"/>
+                  <iconTextGap value="12"/>
+                  <text value="Redistribuir vehículos"/>
+                  <toolTipText value="Trasladar vehículos de estaciones críticas a estaciones disponibles"/>
+                </properties>
+              </component>
+              <component id="p0003" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag top="10" left="50" bottom="6" right="50" weightx="1.0" weighty="0.0"/>
+                </constraints>
+                <properties>
+                  <foreground color="-3025445"/>
+                </properties>
+              </component>
+              <component id="o0003" class="javax.swing.JButton" binding="botonVolverOperador">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                   <gridbag top="14" left="50" bottom="5" right="50" weightx="1.0" weighty="0.0" ipady="10"/>
                 </constraints>
                 <properties>

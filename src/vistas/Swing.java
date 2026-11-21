@@ -1,6 +1,7 @@
 package vistas;
 
 import menu.MenuAdmin;
+import menu.MenuOperador;
 import menu.MenuUsuario;
 
 import javax.swing.*;
@@ -13,6 +14,7 @@ public class Swing {
     private JButton botonSalir;
     private JButton botonUsuario;
     private JButton BotonAdmin;
+    private JButton botonOperador;
     private JPanel menuPrincipal;
 
     private JPanel panelUsuario;
@@ -33,12 +35,18 @@ public class Swing {
     private JButton botonReporteViajes;
     private JButton botonReporteEstacion;
 
+    private JPanel panelOperador;
+    private JButton botonRedistribuir;
+    private JButton botonVolverOperador;
+
     private MenuUsuario menuUsuario;
     private MenuAdmin menuAdmin;
+    private MenuOperador menuOperador;
 
-    public Swing(MenuUsuario menuUsuario, MenuAdmin menuAdmin) {
+    public Swing(MenuUsuario menuUsuario, MenuAdmin menuAdmin, MenuOperador menuOperador) {
         this.menuUsuario = menuUsuario;
         this.menuAdmin = menuAdmin;
+        this.menuOperador = menuOperador;
 
         botonUsuario.addActionListener(new ActionListener() {
             @Override
@@ -130,6 +138,27 @@ public class Swing {
             @Override
             public void actionPerformed(ActionEvent e) {
                 menuAdmin.verReporteViajesPorUsuario();
+            }
+        });
+
+        botonOperador.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "vistaOperador");
+            }
+        });
+        botonVolverOperador.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) Main.getLayout();
+                cl.show(Main, "Card1");
+            }
+        });
+        botonRedistribuir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                menuOperador.redistribuirVehiculo();
             }
         });
     }

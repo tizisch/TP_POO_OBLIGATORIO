@@ -62,16 +62,17 @@ public class Viaje implements Comparable<Viaje>{
     }
 
     public long getDuracionMinutos() {
-        long minutosTotales = Duration.between(fechaHoraInicio, fechaHoraFin).toMinutes();
-        if (this.fechaIntentoDevolucion != null) {
-            long minutosExtra = Duration.between(this.fechaIntentoDevolucion, this.fechaHoraFin).toMinutes();
-            if (minutosExtra > limiteMinutosGracia) {
-                minutosTotales = minutosTotales - limiteMinutosGracia;
-            } else {
-                minutosTotales = minutosTotales - minutosExtra;
-            }
+        if (this.fechaIntentoDevolucion == null) {
+            return Duration.between(fechaHoraInicio, fechaHoraFin).toMinutes();
         }
-        return minutosTotales;
+
+        long minutosDeViaje = Duration.between(fechaHoraInicio, fechaIntentoDevolucion).toMinutes();
+        long minutosDeTraslado = Duration.between(fechaIntentoDevolucion, fechaHoraFin).toMinutes();
+
+        if (minutosDeTraslado > limiteMinutosGracia) {
+            return minutosDeViaje + (minutosDeTraslado - limiteMinutosGracia);
+        }
+        return minutosDeViaje;
     }
 
     public boolean fueCancelado() {

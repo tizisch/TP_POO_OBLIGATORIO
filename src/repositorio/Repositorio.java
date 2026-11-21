@@ -185,6 +185,16 @@
             return disponibles;
         }
 
+        public List<Estacion> estacionesParaRedistribuir() {
+            List<Estacion> criticas = new ArrayList<>();
+            for (Estacion estacion : this.estaciones) {
+                if (estacion.requiereRedistribucion()) {
+                    criticas.add(estacion);
+                }
+            }
+            return criticas;
+        }
+
         public List<Usuario> getUsuarios() {
             return usuarios;
         }

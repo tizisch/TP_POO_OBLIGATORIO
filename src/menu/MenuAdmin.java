@@ -101,6 +101,4 @@ public class MenuAdmin extends Menu{
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
         }
     }
-
-
 }

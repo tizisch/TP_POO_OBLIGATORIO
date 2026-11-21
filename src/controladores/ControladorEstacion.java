@@ -1,7 +1,11 @@
 package controladores;
 
+import excepciones.EstacionLlenaException;
+import excepciones.EstacionNoEncontradaException;
+import excepciones.VehiculoNoDisponibleException;
 import repositorio.Repositorio;
 import vehiculos.Estacion;
+import vehiculos.Vehiculo;
 
 import java.util.Comparator;
 import java.util.List;
@@ -51,5 +55,34 @@ public class ControladorEstacion {
             }
         });
         return estaciones;
+    }
+
+    public List<Estacion> obtenerEstacionesParaRedistribuir() {
+        return repositorio.estacionesParaRedistribuir();
+    }
+
+    public void redistribuirVehiculo(String codigoOrigen, String codigoDestino, String codigoVehiculo)
+            throws EstacionNoEncontradaException, VehiculoNoDisponibleException, EstacionLlenaException {
+        Estacion estacionOrigen = repositorio.buscarEstacion(codigoOrigen);
+        if (estacionOrigen == null) {
+            throw new EstacionNoEncontradaException("No existe la estación de origen " + codigoOrigen);
+        }
+
+        Estacion estacionDestino = repositorio.buscarEstacion(codigoDestino);
+        if (estacionDestino == null) {
+            throw new EstacionNoEncontradaException("No existe la estación de destino " + codigoDestino);
+        }
+
+        Vehiculo vehiculo = estacionOrigen.buscarVehiculo(codigoVehiculo);
+        if (vehiculo == null) {
+            throw new VehiculoNoDisponibleException("El vehículo " + codigoVehiculo + " no está en la estación " + codigoOrigen);
+        }
+
+        if (!estacionDestino.tieneLugarDisponible()) {
+            throw new EstacionLlenaException("La estación de destino " + codigoDestino + " está llena.");
+        }
+
+        estacionOrigen.quitarVehiculo(vehiculo);
+        estacionDestino.agregarVehiculo(vehiculo);
     }
 }

@@ -3,6 +3,7 @@ import controladores.ControladorEstacion;
 import controladores.ControladorReporte;
 import controladores.ControladorViajes;
 import menu.MenuAdmin;
+import menu.MenuOperador;
 import menu.MenuUsuario;
 import repositorio.Repositorio;
 import vistas.Swing;
@@ -21,7 +22,8 @@ public class Main {
 
         MenuUsuario menuUsuario = new MenuUsuario(controladorCuenta, controladorViajes);
         MenuAdmin menuAdmin = new MenuAdmin(controladorCuenta, controladorEstacion, controladorReporte);
+        MenuOperador menuOperador = new MenuOperador(controladorEstacion);
 
-        new Swing(menuUsuario, menuAdmin).iniciar();
+        new Swing(menuUsuario, menuAdmin, menuOperador).iniciar();
     }
 }
