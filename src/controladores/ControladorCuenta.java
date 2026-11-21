@@ -35,6 +35,10 @@ public class ControladorCuenta {
         if (documento == null || documento.isBlank()) {
             throw new IllegalArgumentException("Debe ingresar un documento");
         }
+        documento = documento.trim();
+        if (!documento.matches("\\d{7,8}")) { // o "\\d+" si querés permitir cualquier cantidad de dígitos
+            throw new IllegalArgumentException("El documento debe contener solo números");
+        }
         if (email == null || !email.contains("@")) {
             throw new IllegalArgumentException("El email no es válido");
         }
