@@ -6,6 +6,7 @@
 
     import java.time.LocalDate;
     import java.util.ArrayList;
+    import java.util.Comparator;
     import java.util.List;
     import java.io.*;
 
@@ -164,6 +165,24 @@
                 }
             }
             return resultado;
+        }
+
+        public List<Estacion> estacionesDisponiblesCercanas(Estacion estacionOrigen) {
+            List<Estacion> disponibles = new ArrayList<>();
+            for (Estacion estacion : this.estaciones) {
+                if (estacion != estacionOrigen && estacion.tieneLugarDisponible()) {
+                    disponibles.add(estacion);
+                }
+            }
+            disponibles.sort(new Comparator<Estacion>() {
+                @Override
+                public int compare(Estacion estacion1, Estacion estacion2) {
+                    double distancia1 = estacionOrigen.calcularDistancia(estacion1);
+                    double distancia2 = estacionOrigen.calcularDistancia(estacion2);
+                    return Double.compare(distancia1, distancia2);
+                }
+            });
+            return disponibles;
         }
 
         public List<Usuario> getUsuarios() {

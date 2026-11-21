@@ -14,7 +14,9 @@ public class Viaje implements Comparable<Viaje>{
     private Vehiculo vehiculo;
     private Estacion estacionOrigen;
     private Estacion estacionDestino;
+    private LocalDateTime fechaIntentoDevolucion;
     private static final int minutosDeCancelacion = 2;
+    private static final int limiteMinutosGracia = 180;
 
 
     public LocalDateTime getFechaHoraFin() {
@@ -41,7 +43,14 @@ public class Viaje implements Comparable<Viaje>{
         this.fechaHoraInicio = LocalDateTime.now();
         this.fechaHoraFin = null;
         this.estacionDestino = null;
+        this.fechaIntentoDevolucion = null;
         this.distanciaRecorrido = 0.0;
+    }
+
+    public void registrarIntentoFallido() {
+        if (this.fechaIntentoDevolucion == null) {
+            this.fechaIntentoDevolucion = LocalDateTime.now();
+        }
     }
     @Override
     public int compareTo(Viaje otroViaje) {
@@ -53,7 +62,16 @@ public class Viaje implements Comparable<Viaje>{
     }
 
     public long getDuracionMinutos() {
-        return Duration.between(fechaHoraInicio, fechaHoraFin).toMinutes();
+        long minutosTotales = Duration.between(fechaHoraInicio, fechaHoraFin).toMinutes();
+        if (this.fechaIntentoDevolucion != null) {
+            long minutosExtra = Duration.between(this.fechaIntentoDevolucion, this.fechaHoraFin).toMinutes();
+            if (minutosExtra > limiteMinutosGracia) {
+                minutosTotales = minutosTotales - limiteMinutosGracia;
+            } else {
+                minutosTotales = minutosTotales - minutosExtra;
+            }
+        }
+        return minutosTotales;
     }
 
     public boolean fueCancelado() {
@@ -73,7 +91,7 @@ public class Viaje implements Comparable<Viaje>{
     }
 
     public double calcularCosto(Promocion promo) {
-        int minutos = (int) Duration.between(this.fechaHoraInicio, this.fechaHoraFin).toMinutes();
+        int minutos = (int) getDuracionMinutos();
         double costo = this.vehiculo.calcularCosto(minutos);
 
         if (promo != null) {

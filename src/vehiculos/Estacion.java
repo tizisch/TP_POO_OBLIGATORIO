@@ -63,6 +63,22 @@ public class Estacion {
         return null;
     }
 
+    public double obtenerLatitud() {
+        String[] partes = this.coordenadas.split(",");
+        return Double.parseDouble(partes[0]);
+    }
+
+    public double obtenerLongitud() {
+        String[] partes = this.coordenadas.split(",");
+        return Double.parseDouble(partes[1]);
+    }
+
+    public double calcularDistancia(Estacion otraEstacion) {
+        double diferenciaLatitud = this.obtenerLatitud() - otraEstacion.obtenerLatitud();
+        double diferenciaLongitud = this.obtenerLongitud() - otraEstacion.obtenerLongitud();
+        return Math.sqrt((diferenciaLatitud * diferenciaLatitud) + (diferenciaLongitud * diferenciaLongitud));
+    }
+
     public String contenidoArchivo() {
         return codigo + ";" + direccion + ";" + coordenadas + ";" + capacidadMaxima;
     }

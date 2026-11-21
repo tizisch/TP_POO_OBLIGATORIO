@@ -12,7 +12,7 @@ public class PlanMensual implements Promocion{
         if (!viaje.getUsuario().getTienePlanMensual() || viaje.getUsuario().getViajesConPlanUsados() >= TOPE_VIAJES) {
             return 0.0;
         } else {
-            long duracion = Duration.between(viaje.getFechaHoraInicio(), viaje.getFechaHoraFin()).toMinutes();
+            long duracion = viaje.getDuracionMinutos();
             if (duracion <= minutosMaximos) {
                 return costo;
             } else

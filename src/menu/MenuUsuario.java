@@ -4,7 +4,9 @@ import controladores.ControladorCuenta;
 import controladores.ControladorViajes;
 import excepciones.*;
 import usuarios.Usuario;
+import vehiculos.Estacion;
 import javax.swing.*;
+import java.util.List;
 
 public class MenuUsuario extends Menu{
     private ControladorCuenta controladorCuenta;
@@ -74,6 +76,13 @@ public class MenuUsuario extends Menu{
         try {
             double costo = controladorViajes.devolverVehiculo(documento, codigoEstacion);
             JOptionPane.showMessageDialog(null,"Vehículo devuelto. Costo del viaje: $" + costo);
+        } catch (EstacionLlenaException e) {
+            List<Estacion> cercanas = controladorViajes.recomendarEstacionesCercanas(codigoEstacion);
+            String mensaje = e.getMessage() + "\n\nEstaciones cercanas con lugar disponible:\n";
+            for (Estacion estacion : cercanas) {
+                mensaje += estacion.toString() + "\n";
+            }
+            JOptionPane.showMessageDialog(null, mensaje);
         } catch (UsuarioNoEncontradoException | EstacionNoEncontradaException | NoTieneViajeAbiertoException e) {
             JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
         }

@@ -10,6 +10,9 @@ import viajes.PrimerViaje;
 import viajes.Promocion;
 import viajes.Viaje;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ControladorViajes {
     private Repositorio repositorio;
@@ -47,7 +50,7 @@ public class ControladorViajes {
 
 
 
-    public double devolverVehiculo(String documento, String codigoEstacion) throws UsuarioNoEncontradoException, EstacionNoEncontradaException, NoTieneViajeAbiertoException {
+    public double devolverVehiculo(String documento, String codigoEstacion) throws UsuarioNoEncontradoException, EstacionNoEncontradaException, NoTieneViajeAbiertoException, EstacionLlenaException {
         Usuario usuario = repositorio.buscarUsuario(documento);
         if (usuario == null) {
             throw new UsuarioNoEncontradoException("No existe un usuario con documento " + documento);
@@ -61,6 +64,11 @@ public class ControladorViajes {
         Viaje viaje = usuario.getViajeAbierto();
         if (viaje == null) {
             throw new NoTieneViajeAbiertoException("No tenés ningún viaje en curso.");
+        }
+
+        if (!estacion.tieneLugarDisponible()) {
+            viaje.registrarIntentoFallido();
+            throw new EstacionLlenaException("La estación " + codigoEstacion + " no tiene lugar disponible.");
         }
 
         viaje.finalizar(estacion);
@@ -89,5 +97,13 @@ public class ControladorViajes {
         }
 
         return totalViaje;
+    }
+
+    public List<Estacion> recomendarEstacionesCercanas(String codigoEstacion) {
+        Estacion estacion = repositorio.buscarEstacion(codigoEstacion);
+        if (estacion == null) {
+            return new ArrayList<>();
+        }
+        return repositorio.estacionesDisponiblesCercanas(estacion);
     }
 }

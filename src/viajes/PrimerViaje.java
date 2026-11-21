@@ -11,7 +11,7 @@ public class PrimerViaje implements  Promocion {
         if (viaje.getUsuario().cantidadViajesPrevios(viaje) > 0){
             return 0.0;
         } else {
-            long duracion = Duration.between(viaje.getFechaHoraInicio(), viaje.getFechaHoraFin()).toMinutes();
+            long duracion = viaje.getDuracionMinutos();
             if (duracion <= minutosGratis){ return costo;
             }else
                 return viaje.getVehiculo().calcularCosto(minutosGratis);
